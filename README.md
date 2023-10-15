@@ -1,2 +1,2 @@
 # BaseSystemCalculator
--A calculator and converter for base systems can convert binary to octal, decimal and exadecimal and vice versa 
+-A Converter for base systems that can convert binary to octal, decimal and hexadecimal and vice versa 
