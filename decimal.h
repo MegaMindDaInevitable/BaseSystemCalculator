@@ -2,6 +2,7 @@
 #ifndef DECIMAL_H
 #define DECIMAL_H
 
+#include "binary.h"
 
 #include <QObject>
 #include <QWidget>

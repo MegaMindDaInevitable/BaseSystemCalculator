@@ -28,8 +28,9 @@ private slots:
     void decimalButtonClicked();
     void hexadecimalButtonClicked();
 private:
-    QLabel *prompt;
-    QPushButton *buttons[5];
+    QLabel *prompt{nullptr};
+    static constexpr int ButtonCount = 5;
+    QPushButton *buttons[ButtonCount] = {nullptr};
 
 
 

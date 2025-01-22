@@ -64,6 +64,8 @@ void Binary::functioToMain()
 {
     //this->hide();
     QWidget *parent = parentWidget();
+    parent->showMaximized();
+    parent->setMaximumSize(300,400);
     parent->show();
 
 
