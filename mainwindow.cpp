@@ -36,7 +36,7 @@ MainWindow::~MainWindow()
 void MainWindow::octalButtonClicked()
 {
     hide();
-    Octal *octalWindow = new Octal(this);
+    Octal *octalWindow = new Octal();
     octalWindow->showMaximized();
     octalWindow->setFixedSize(300, 400);
     octalWindow->setWindowTitle("Octal");
@@ -46,7 +46,7 @@ void MainWindow::octalButtonClicked()
 void MainWindow::binaryButtonClicked()
 {
     hide();
-    Binary *binaryWindow = new Binary(this);
+    Binary *binaryWindow = new Binary();
     binaryWindow->showMaximized();
     binaryWindow->setFixedSize(300, 400);
     binaryWindow->setWindowTitle("Binary");
@@ -56,7 +56,7 @@ void MainWindow::binaryButtonClicked()
 void MainWindow::decimalButtonClicked()
 {
     hide();
-    Decimal *decimalWindow = new Decimal(this);
+    Decimal *decimalWindow = new Decimal();
     decimalWindow->showMaximized();
     decimalWindow->setFixedSize(300, 400);
     decimalWindow->setWindowTitle("Decimal");
@@ -68,7 +68,7 @@ void MainWindow::hexadecimalButtonClicked()
 {
 
     hide();
-    Hexadecimal *hexadecimalWindow = new Hexadecimal(this);
+    Hexadecimal *hexadecimalWindow = new Hexadecimal();
     hexadecimalWindow->showMaximized();
     hexadecimalWindow->setFixedSize(300, 400);
     hexadecimalWindow->setWindowTitle("Hexadecimal");
@@ -91,7 +91,7 @@ void MainWindow::geomtry()
        buttons[i] = new QPushButton(systems[i], this);
        buttons[i]->setGeometry((QRect(QPoint(50 , 150 + 50 * i), QSize(200,50))));
        
-       /*if (i == 0) {
+       if (i == 0) {
            connect(buttons[i], SIGNAL(clicked()), this, SLOT(binaryButtonClicked()));
        } else if (i == 1) {
            connect(buttons[i], SIGNAL(clicked()), this, SLOT(octalButtonClicked()));
@@ -99,14 +99,14 @@ void MainWindow::geomtry()
            connect(buttons[i], SIGNAL(clicked()), this, SLOT(decimalButtonClicked()));
        } else if (i == 3) {
            connect(buttons[i], SIGNAL(clicked()), this, SLOT(hexadecimalButtonClicked()));
-       }*/
-       typedef void(MainWindow::*slotFunction)();
+       }
+      /* typedef void(MainWindow::*slotFunction)();
        slotFunction mySlots[] = { &MainWindow::binaryButtonClicked, &MainWindow::octalButtonClicked,
                                &MainWindow::decimalButtonClicked, &MainWindow::hexadecimalButtonClicked};
        for(int i = 0; i<=3;i++)
        {
            connect(buttons[i], &QPushButton::clicked,this,mySlots[i]);
-       }
+       }*/
 
        //buttons border color
        buttons[i]->setStyleSheet("border: 1px solid black; border-radius: 10px;"

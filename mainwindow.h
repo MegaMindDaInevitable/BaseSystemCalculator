@@ -18,6 +18,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void geomtry();
+    //void funtionToMain();
 signals:
 
 private slots:

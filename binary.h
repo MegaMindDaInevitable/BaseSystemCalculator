@@ -29,7 +29,7 @@ public slots:
     void toHexadecimal();
     //function to be called when button is pressed for octal
     void toOctadecimal();*/
-    void functioToMain();
+    void functionToMain();
 
 private:
     //Binary binaryWindow();

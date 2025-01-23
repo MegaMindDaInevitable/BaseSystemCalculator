@@ -20,7 +20,7 @@ void Binary::funcForButton()
     backButton = new QPushButton("Back",this);
     backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
     backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
-    connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functioToMain()));
+    connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
 
 }
 
@@ -60,13 +60,14 @@ void Binary::binaryGUI()
     //geometry();
 }
 
-void Binary::functioToMain()
+void Binary::functionToMain()
 {
-    //this->hide();
-    QWidget *parent = parentWidget();
-    parent->showMaximized();
-    parent->setMaximumSize(300,400);
-    parent->show();
-
+    MainWindow *window = new MainWindow();
+    window->show();
+    window->showMaximized();
+    window->setFixedSize(300, 400);
+    window->raise();
+    window->setFocus();
+    this->close();
 
 }
