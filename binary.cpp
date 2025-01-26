@@ -3,7 +3,7 @@
 #include "mainwindow.h"
 #include "backbutton.h"
 #include <QPushButton>
-#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QWidget>
 #include <QLayout>
 
@@ -32,14 +32,27 @@ void Binary::binaryGUI()
     btn->setStyleSheet("border: 1px solid black; border-radius: 10px;");
     QHBoxLayout * layout = new QHBoxLayout(this);
     layout->addWidget(btn);*/
+    QVBoxLayout * layout = new QVBoxLayout(this);
+
     QLabel *binaryLabel = new QLabel("0", this);
-    binaryLabel->setGeometry(QRect(QPoint(50,25), QSize(200, 50)));
+    binaryLabel->setGeometry(QRect(QPoint(50,10), QSize(200, 50)));
+    binaryLabel->setFixedSize(200,50);
+    //binaryLabel->setAlignment(Qt::AlignCenter);
+    //layout->addWidget(binaryLabel);
+
+
+    QLabel *resultsLbl = new QLabel("1",this);
+    resultsLbl->setFixedSize(200, 10);
+    //resultsLbl->setAlignment(Qt::AlignCenter);
+    resultsLbl->setGeometry(QRect(QPoint(50, 25),QSize(200, 50)));
+    //layout->addWidget(resultsLbl);
+
+
+    //layout->setSpacing();
+
+    //setLayout(layout);
+
     funcForButton();
-
-
-   // QLayout
-
-
     QString otherSystem[] = {"Octal","Decimal","Hexadecial"};
     for(int i = 0; i <= 2; i++)
     {  //moreButtons is buttons for different operations in the base system

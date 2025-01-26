@@ -36,6 +36,7 @@ private:
     QPushButton *moreButtons[2];
     QPushButton *backButton;
     QLabel  *labl;
+    //QLabel *resultsLbl;
 
 signals:
 
