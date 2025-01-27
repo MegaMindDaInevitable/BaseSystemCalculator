@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QPushButton>
 
 
 class Octal : public QWidget
@@ -13,8 +14,10 @@ class Octal : public QWidget
 public:
     explicit Octal(QWidget *parent = nullptr);
     void octalGUI();
+    void buttonBack();
 
 private slots:
+    void functionToMain();
 
 
 signals:
@@ -22,6 +25,7 @@ signals:
 
 private:
    // Octal octalWindow();
+    QPushButton *backButton;
 
 };
 

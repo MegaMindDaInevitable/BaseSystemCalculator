@@ -1,5 +1,6 @@
 
 #include "octal.h"
+#include "mainwindow.h"
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QWidget>
@@ -19,6 +20,28 @@ void Octal::octalGUI()
 
     QHBoxLayout * layout2 = new QHBoxLayout(this);
     layout2->addWidget(butn);
+    buttonBack();
+}
+
+void Octal::buttonBack()
+{
+    backButton = new QPushButton("Back",this);
+    backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
+    backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
+    connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
+
+}
+
+void Octal::functionToMain()
+{
+
+    MainWindow *window = new MainWindow();
+    window->show();
+    window->showMaximized();
+    window->setFixedSize(300, 400);
+    window->raise();
+    window->setFocus();
+    this->close();
 }
 
 
