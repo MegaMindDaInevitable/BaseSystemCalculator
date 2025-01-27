@@ -1,5 +1,7 @@
 
 #include "decimal.h"
+#include "mainwindow.h"
+#include "binary.h"
 #include <QLabel>
 #include <QPushButton>
 #include <QWidget>
@@ -19,7 +21,7 @@ void Decimal::decimalGui()
     //QLabel *enterDecimal
     /*QPushButton *buttn = new QPushButton("Decimalllllll");
     buttn->setStyleSheet("border: 1px solid black; border-radius: 10px;");
-
+    f
     QHBoxLayout * layout3 = new QHBoxLayout(this);
     layout3->addWidget(buttn);*/
 
@@ -32,7 +34,7 @@ void Decimal::decimalGui()
      QLabel *binaryLabel = new QLabel("0", this);
     binaryLabel->setGeometry(QRect(QPoint(50,25), QSize(200, 50)));
     //funcForButton();
-
+    functionBtn();
 
     // QLayout
 
@@ -54,5 +56,26 @@ void Decimal::decimalGui()
         moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
     }*/
+}
+
+void Decimal::functionBtn()
+{
+
+    backButton = new QPushButton("Back",this);
+    backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
+    backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
+    connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
+}
+
+void Decimal::functionToMain()
+{
+
+    MainWindow *window = new MainWindow();
+    window->show();
+    window->showMaximized();
+    window->setFixedSize(300, 400);
+    window->raise();
+    window->setFocus();
+    this->close();
 }
 

@@ -2,10 +2,9 @@
 #ifndef DECIMAL_H
 #define DECIMAL_H
 
-#include "binary.h"
-
 #include <QObject>
 #include <QWidget>
+#include <QPushButton>
 
 
 class Decimal : public QWidget
@@ -14,12 +13,15 @@ class Decimal : public QWidget
 public:
     explicit Decimal(QWidget *parent = nullptr);
     void decimalGui();
+    void functionBtn();
 
 signals:
 
 private slots:
+    void functionToMain();
 
 private:
+    QPushButton *backButton;
 
 
 };

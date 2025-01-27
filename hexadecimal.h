@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QPushButton>
 
 
 class Hexadecimal : public QWidget
@@ -13,12 +14,16 @@ class Hexadecimal : public QWidget
 public:
     explicit Hexadecimal(QWidget *parent = nullptr);
     void hexadecimalGUI();
+    void funForButton();
 
 signals:
 
 private slots:
+    void functionToMain();
 
 private:
+    QPushButton *backButton;
+
 
 
 };
