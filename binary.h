@@ -17,6 +17,7 @@ public:
     explicit Binary(QWidget *parent = nullptr);
     void funcForButton(); //function to creat a button
     void binaryGUI();
+    int binaryCalculations();
 
 
 private slots:
@@ -38,6 +39,8 @@ private:
     QPushButton *backButton;
     QLabel  *labl;
     QLineEdit *userInput;
+    QString text;
+    int count = 0;
    // QLineEdit *outputLine;
     //QLabel *resultsLbl;
 
