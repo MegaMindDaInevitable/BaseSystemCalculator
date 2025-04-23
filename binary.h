@@ -4,6 +4,7 @@
 
 
 #include <QObject>
+#include <QLineEdit>
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
@@ -36,6 +37,8 @@ private:
     QPushButton *moreButtons[2];
     QPushButton *backButton;
     QLabel  *labl;
+    QLineEdit *userInput;
+   // QLineEdit *outputLine;
     //QLabel *resultsLbl;
 
 signals:

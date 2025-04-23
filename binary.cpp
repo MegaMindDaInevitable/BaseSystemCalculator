@@ -4,6 +4,7 @@
 #include "backbutton.h"
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QLineEdit>
 #include <QWidget>
 #include <QLayout>
 
@@ -32,23 +33,34 @@ void Binary::binaryGUI()
     btn->setStyleSheet("border: 1px solid black; border-radius: 10px;");
     QHBoxLayout * layout = new QHBoxLayout(this);
     layout->addWidget(btn);*/
-    QVBoxLayout * layout = new QVBoxLayout(this);
+    //QVBoxLayout * layout = new QVBoxLayout(this);
 
-    QLabel *binaryLabel = new QLabel("0", this);
-    binaryLabel->setGeometry(QRect(QPoint(50,10), QSize(200, 50)));
-    binaryLabel->setFixedSize(200,50);
+    //inputLine = new QLineEdit("input Line");
+
+    //QLabel *binaryLabel = new QLabel("0", this);
+   // binaryLabel->setGeometry(QRect(QPoint(50,10), QSize(200, 50)));
+    //binaryLabel->setFixedSize(200,50);
     //binaryLabel->setAlignment(Qt::AlignCenter);
     //layout->addWidget(binaryLabel);
 
+   // QHBoxLayout *layOut = new QHBoxLayout(this);
 
-    QLabel *resultsLbl = new QLabel("1",this);
-    resultsLbl->setFixedSize(200, 10);
+    userInput = new QLineEdit (this);
+    userInput->setPlaceholderText("Enter your number here...");
+    userInput->setGeometry(QRect(QPoint(50, 5),QSize(200,50)));
+
+
+    QLabel *resultsLbl = new QLabel(this);
+    //resultsLbl->setFixedSize(200, 10);
     //resultsLbl->setAlignment(Qt::AlignCenter);
-    resultsLbl->setGeometry(QRect(QPoint(50, 25),QSize(200, 50)));
+    resultsLbl->setGeometry(QRect(QPoint(50, 75),QSize(200, 50)));
     //layout->addWidget(resultsLbl);
+    resultsLbl->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
 
     //layout->setSpacing();
+
+
 
     //setLayout(layout);
 
