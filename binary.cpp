@@ -48,9 +48,11 @@ void Binary::binaryGUI()
     userInput = new QLineEdit (this);
     userInput->setPlaceholderText("Enter your number here...");
     userInput->setGeometry(QRect(QPoint(50, 5),QSize(200,50)));
+    userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
 
-    QLabel *resultsLbl = new QLabel(this);
+
+    QLabel *resultsLbl = new QLabel("Answer",this);
     //resultsLbl->setFixedSize(200, 10);
     //resultsLbl->setAlignment(Qt::AlignCenter);
     resultsLbl->setGeometry(QRect(QPoint(50, 75),QSize(200, 50)));
