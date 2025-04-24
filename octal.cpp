@@ -46,12 +46,14 @@ void Octal::octalGUI()
 
     }
     //geometry();
+    buttonBack();
+
 }
 
 
     /*QHBoxLayout * layout2 = new QHBoxLayout(this);
-    layout2->addWidget(butn);
-    buttonBack();*/
+    layout2->addWidget(butn);*/
+
 
 
 void Octal::buttonBack()
