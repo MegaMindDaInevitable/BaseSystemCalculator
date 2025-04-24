@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QWidget>
 #include <QPushButton>
+#include <QLineEdit>
 
 
 class Octal : public QWidget
@@ -26,6 +27,7 @@ signals:
 private:
    // Octal octalWindow();
     QPushButton *backButton;
+    QLineEdit *userInput;
 
 };
 
