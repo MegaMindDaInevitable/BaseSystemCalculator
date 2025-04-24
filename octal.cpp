@@ -25,15 +25,34 @@ void Octal::octalGUI()
     outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
 
-    setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
+    /*setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
     QPushButton *butn = new QPushButton("Octalllll");
-    butn->setStyleSheet("border: 1px solid black; border-radius: 10px;");
+    butn->setStyleSheet("border: 1px solid black; border-radius: 10px;");*/
+    QString otherSystem[] = {"Octal","Decimal","Hexadecial"};
+    for(int i = 0; i <= 2; i++)
+    {  //moreButtons is buttons for different operations in the base system
+        moreButtons[i] = new QPushButton(otherSystem[i], this);
+        moreButtons[i]->setGeometry((QRect(QPoint(50, 150 + 50 * i), QSize(200, 50))));
 
+        if(i == 0){
+            connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toOctadecimal()));
+        }else if(i == 1){
+            connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toDecimal()));
+        }else if(i == 2){
+            connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toHexadecimal()));
+        }
 
-    QHBoxLayout * layout2 = new QHBoxLayout(this);
-    layout2->addWidget(butn);
-    buttonBack();
+        moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
+
+    }
+    //geometry();
 }
+
+
+    /*QHBoxLayout * layout2 = new QHBoxLayout(this);
+    layout2->addWidget(butn);
+    buttonBack();*/
+
 
 void Octal::buttonBack()
 {
