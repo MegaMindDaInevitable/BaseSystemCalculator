@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QLineEdit>
 #include <QPushButton>
 
 
@@ -23,6 +24,7 @@ private slots:
 
 private:
     QPushButton *backButton;
+    QLineEdit *userInput;
 
 
 

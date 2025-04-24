@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QWidget>
 #include <QPushButton>
+#include <QLineEdit>
 
 
 class Decimal : public QWidget
@@ -22,6 +23,7 @@ private slots:
 
 private:
     QPushButton *backButton;
+    QLineEdit *userInput;
 
 
 };

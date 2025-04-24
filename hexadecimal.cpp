@@ -1,6 +1,7 @@
 
 #include "mainwindow.h"
 #include "hexadecimal.h"
+#include "binary.h"
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QWidget>
@@ -22,6 +23,15 @@ void Hexadecimal::hexadecimalGUI()
 
     QHBoxLayout * layout4 = new QHBoxLayout(this);
     layout4->addWidget(button);
+
+    userInput = new QLineEdit (this);
+    userInput->setPlaceholderText("Enter your number here...");
+    userInput->setGeometry(QRect(QPoint(50, 5),QSize(200,50)));
+    userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
+
+    QLabel *outPutLabel = new QLabel("Answer",this);
+    outPutLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
+    outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
 }
 
