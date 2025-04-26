@@ -17,12 +17,12 @@ void Hexadecimal::hexadecimalGUI()
 {
     funForButton();
     setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
-    QPushButton *button = new QPushButton("Hexadecimal");
+   /* QPushButton *button = new QPushButton("Hexadecimal");
     button->setStyleSheet("border: 1px solid black; border-radius: 10px;");
 
 
     QHBoxLayout * layout4 = new QHBoxLayout(this);
-    layout4->addWidget(button);
+    layout4->addWidget(button);*/
 
     userInput = new QLineEdit (this);
     userInput->setPlaceholderText("Enter your number here...");
@@ -32,6 +32,24 @@ void Hexadecimal::hexadecimalGUI()
     QLabel *outPutLabel = new QLabel("Answer",this);
     outPutLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
     outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
+
+    QString otherSystem[] = {"Octal","Decimal","Hexadecial"};
+    for(int i = 0; i <= 2; i++)
+    {  //moreButtons is buttons for different operations in the base system
+        moreButtons[i] = new QPushButton(otherSystem[i], this);
+        moreButtons[i]->setGeometry((QRect(QPoint(50, 150 + 50 * i), QSize(200, 50))));
+
+        if(i == 0){
+            connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toOctadecimal()));
+        }else if(i == 1){
+            connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toDecimal()));
+        }else if(i == 2){
+            connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toHexadecimal()));
+        }
+
+        moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
+
+    }
 
 }
 
