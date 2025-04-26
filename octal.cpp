@@ -25,8 +25,8 @@ void Octal::octalGUI()
     outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
 
-    /*setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
-    QPushButton *butn = new QPushButton("Octalllll");
+    setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
+   /* QPushButton *butn = new QPushButton("Octalllll");
     butn->setStyleSheet("border: 1px solid black; border-radius: 10px;");*/
     QString otherSystem[] = {"Binary","Decimal","Hexadecial"};
     for(int i = 0; i <= 2; i++)
