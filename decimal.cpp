@@ -43,7 +43,7 @@ void Decimal::decimalGui()
     // QLayout
 
 
-   /* QString otherSystem[] = {"Octal","Decimal","Hexadecial"};
+    QString otherSystem[] = {"Octal","Decimal","Hexadecial"};
     for(int i = 0; i <= 2; i++)
     {  //moreButtons is buttons for different operations in the base system
         moreButtons[i] = new QPushButton(otherSystem[i], this);
@@ -59,7 +59,7 @@ void Decimal::decimalGui()
 
         moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
-    }*/
+    }
 }
 
 void Decimal::functionBtn()
