@@ -28,7 +28,7 @@ void Octal::octalGUI()
     setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
    /* QPushButton *butn = new QPushButton("Octalllll");
     butn->setStyleSheet("border: 1px solid black; border-radius: 10px;");*/
-    QString otherSystem[] = {"Binary","Decimal","Hexadecial"};
+    QString otherSystem[] = {"Binary","Binary","Hexadecial"};
     for(int i = 0; i <= 2; i++)
     {  //moreButtons is buttons for different operations in the base system
         moreButtons[i] = new QPushButton(otherSystem[i], this);
@@ -59,7 +59,7 @@ void Octal::octalGUI()
 void Octal::buttonBack()
 {
     backButton = new QPushButton("Back",this);
-    backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
+    backButton->setStyleSheet("border: 1px solid black;border-radius;10px;");
     backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
     connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
 
