@@ -22,7 +22,7 @@ void Binary::funcForButton()
     backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
     backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
     connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
-    backButton->setStyleSheet("border: 1px solid black;border-radius:10px;");
+    //backButton->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
 
 }
@@ -30,7 +30,7 @@ void Binary::funcForButton()
 void Binary::binaryGUI()
 {
 
-    setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
+    //setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
     /*QPushButton *btn = new QPushButton("Binaryyyyyy");
     btn->setStyleSheet("border: 1px solid black; border-radius: 10px;");
     QHBoxLayout * layout = new QHBoxLayout(this);
@@ -50,7 +50,22 @@ void Binary::binaryGUI()
     userInput = new QLineEdit (this);
     userInput->setPlaceholderText("Enter your number here...");
     userInput->setGeometry(QRect(QPoint(50, 5),QSize(200,50)));
-    userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
+   // userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
+
+    QString binaryNumber = userInput->text();
+    int sizeOfInput;
+    sizeOfInput = binaryNumber.size();
+    QString contain;
+    for(int i = 0; i<= sizeOfInput; i-- )
+    {
+        if(binaryNumber[i] != '1' && binaryNumber != '0')
+        {
+            //"A binary system only contains 1 and  0"
+            contain+=binaryNumber[i];
+
+        }
+    }
+
 
 
 
@@ -59,9 +74,9 @@ void Binary::binaryGUI()
     //resultsLbl->setAlignment(Qt::AlignCenter);
     resultsLbl->setGeometry(QRect(QPoint(50, 75),QSize(200, 50)));
     //layout->addWidget(resultsLbl);
-    resultsLbl->setStyleSheet("border: 1px solid black;border-radius:10px;");
+    //resultsLbl->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
-
+    resultsLbl->setText(contain);
     //layout->setSpacing();
 
 
@@ -83,7 +98,7 @@ void Binary::binaryGUI()
             connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toHexadecimal()));
         }
 
-        moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
+        //moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
     }
     //geometry();

@@ -57,7 +57,7 @@ void Decimal::decimalGui()
             connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toHexadecimal()));
         }
 
-        moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
+        //moreButtons[i]->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
     }
 }
@@ -66,7 +66,7 @@ void Decimal::functionBtn()
 {
 
     backButton = new QPushButton("Back",this);
-    backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
+    //backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
     backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
     connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
 }
