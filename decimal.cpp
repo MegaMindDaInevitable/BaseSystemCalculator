@@ -16,9 +16,9 @@ Decimal::Decimal(QWidget *parent)
 
 void Decimal::decimalGui()
 {
-    setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
+    //setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
    // QPushButton *backBtn = new QPushButton();
-    setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
+   // setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
     //QLabel *enterDecimal
     /*QPushButton *buttn = new QPushButton("Decimalllllll");
     buttn->setStyleSheet("border: 1px solid black; border-radius: 10px;");
@@ -29,14 +29,14 @@ void Decimal::decimalGui()
     userInput = new QLineEdit(this);
     userInput->setPlaceholderText("Enter your numer here..");
     userInput->setGeometry(QRect(QPoint(50, 5), QSize(200, 50)));
-    userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
+    //userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
     /*QPushButton *btn = new QPushButton("Binaryyyyyy");
     btn->setStyleSheet("border: 1px solid black; border-radius: 10px;");
     QHBoxLayout * layout = new QHBoxLayout(this);
     layout->addWidget(btn);*/
     QLabel *outPutLabel = new QLabel("Answer", this);
     outPutLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
-    outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
+    //outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
     //funcForButton();
     functionBtn();
 

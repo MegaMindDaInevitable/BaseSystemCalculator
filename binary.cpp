@@ -19,7 +19,7 @@ Binary::Binary(QWidget *parent)
 void Binary::funcForButton()
 {
     backButton = new QPushButton("Back",this);
-    backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
+   // backButton->setStyleSheet("border: 1px solid black; border-radius; 10px;");
     backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
     connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
     //backButton->setStyleSheet("border: 1px solid black;border-radius:10px;");

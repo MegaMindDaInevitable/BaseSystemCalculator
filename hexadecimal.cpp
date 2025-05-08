@@ -27,11 +27,11 @@ void Hexadecimal::hexadecimalGUI()
     userInput = new QLineEdit (this);
     userInput->setPlaceholderText("Enter your number here...");
     userInput->setGeometry(QRect(QPoint(50, 5),QSize(200,50)));
-    userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
+    //userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
     QLabel *outPutLabel = new QLabel("Answer",this);
     outPutLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
-    outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
+    //outPutLabel->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
     QString otherSystem[] = {"Octal","Decimal","Binary"};
     for(int i = 0; i <= 2; i++)

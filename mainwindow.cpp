@@ -1,5 +1,5 @@
 
-#include "mainwindow.h"
+/*#include "mainwindow.h"
 #include <QWidget>
 #include <QGridLayout>
 #include "binary.h"
@@ -13,8 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
 
-    QString titleBarStyle = "QMainWindow::title { background-color: black; }";
-    setStyleSheet(titleBarStyle);
+    /*QString titleBarStyle = "QMainWindow::title { background-color: black; }";
+    setStyleSheet(titleBarStyle);*/
    /* for(int i = 0; i <= 3; i++)
     {
         buttons[i]->setGeometry(QRect(QPoint(50, 300), QSize(50,50)));
@@ -24,7 +24,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    }*/
+    }
+    QString style = "background-color: rgba(128, 128, 128, 128); color: white;";
+    style += " QPushButton { background-color: #444; color: white; border-radius: 5px; }";
+    setStyleSheet(style);
+
     geomtry();
     //connect()
 }
@@ -106,7 +110,7 @@ void MainWindow::geomtry()
        for(int i = 0; i<=3;i++)
        {
            connect(buttons[i], &QPushButton::clicked,this,mySlots[i]);
-       }*/
+       }
 
        //buttons border color
        buttons[i]->setStyleSheet("border: 1px solid black; border-radius: 10px;"
@@ -116,7 +120,96 @@ void MainWindow::geomtry()
    }
 
 
+}*/
+
+
+
+#include "mainwindow.h"
+#include <QLabel>
+#include <QPushButton>
+#include "binary.h"
+#include "octal.h"
+#include "decimal.h"
+#include "hexadecimal.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+{
+    geomtry();
 }
 
+MainWindow::~MainWindow()
+{
+    // Add cleanup if needed
+}
+
+void MainWindow::octalButtonClicked()
+{
+    if (!octalWindow) {
+        octalWindow = new Octal(this);
+        octalWindow->setFixedSize(300, 400);
+        octalWindow->setWindowTitle("Octal");
+    }
+    hide();
+    octalWindow->showMaximized();
+    octalWindow->show();
+}
+
+void MainWindow::binaryButtonClicked()
+{
+    if (!binaryWindow) {
+        binaryWindow = new Binary(this);
+        binaryWindow->setFixedSize(300, 400);
+        binaryWindow->setWindowTitle("Binary");
+    }
+    hide();
+    binaryWindow->showMaximized();
+    binaryWindow->show();
+}
+
+void MainWindow::decimalButtonClicked()
+{
+    if (!decimalWindow) {
+        decimalWindow = new Decimal(this);
+        decimalWindow->setFixedSize(300, 400);
+        decimalWindow->setWindowTitle("Decimal");
+    }
+    hide();
+    decimalWindow->showMaximized();
+    decimalWindow->show();
+}
+
+void MainWindow::hexadecimalButtonClicked()
+{
+    if (!hexadecimalWindow) {
+        hexadecimalWindow = new Hexadecimal(this);
+        hexadecimalWindow->setFixedSize(300, 400);
+        hexadecimalWindow->setWindowTitle("Hexadecimal");
+    }
+    hide();
+    hexadecimalWindow->showMaximized();
+    hexadecimalWindow->show();
+}
+
+void MainWindow::geomtry()
+{
+    prompt = new QLabel("Which Base System Do You Want To Use", this);
+    prompt->setGeometry(QRect(QPoint(50, 100), QSize(300, 50)));
+    prompt->setStyleSheet("background-color: transparent; color: white;");
+
+    QStringList systems = {"Binary", "Octal", "Decimal", "Hexadecimal"};
+
+    for (int i = 0; i < systems.size(); ++i) {
+        buttons[i] = new QPushButton(systems[i], this);
+        buttons[i]->setGeometry(QRect(QPoint(50, 150 + 50 * i), QSize(200, 50)));
+
+        switch(i) {
+        case 0: connect(buttons[i], &QPushButton::clicked, this, &MainWindow::binaryButtonClicked); break;
+        case 1: connect(buttons[i], &QPushButton::clicked, this, &MainWindow::octalButtonClicked); break;
+        case 2: connect(buttons[i], &QPushButton::clicked, this, &MainWindow::decimalButtonClicked); break;
+        case 3: connect(buttons[i], &QPushButton::clicked, this, &MainWindow::hexadecimalButtonClicked); break;
+        }
+    }
+}
 
 
