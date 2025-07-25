@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
 
     MainWindow w;
-    QString globalStyle = R"(
+  /*  QString globalStyle = R"(
     QWidget { background-color: rgba(128, 128, 128, 128); color: white; }
     QPushButton {
         background-color: #444;
@@ -20,11 +20,11 @@ int main(int argc, char *argv[])
     }
     QPushButton:hover { background-color: gray; }
     QPushButton:pressed { background-color: darkgray; }
-)";
+)";*/
 
 
-    w.setStyleSheet(globalStyle);
-    w.showMaximized();
+   // a.setStyleSheet(globalStyle);
+   // w.showMaximized();
     w.setFixedSize(300, 400);
     w.show();
     return a.exec();

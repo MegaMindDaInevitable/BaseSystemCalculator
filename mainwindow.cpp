@@ -12,9 +12,42 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    setupUI();
 
+}
+MainWindow::~MainWindow()
+{
+
+}
+
+void MainWindow::setupUI()
+{
     /*QString titleBarStyle = "QMainWindow::title { background-color: black; }";
     setStyleSheet(titleBarStyle);*/
+    prompt = new QLabel("Which Base System Do You Want To Use", this);
+    prompt->setGeometry(QRect(QPoint(50, 100), QSize(300,50)));
+
+    QString systems[] = {"Binary", "Octal", "Decimal ", "Hexadecimal"};
+    typedef void(MainWindow::*slotFunction)();
+
+    //button slots
+    slotFunction mySlots[] = {
+                              &MainWindow::binaryButtonClicked, &MainWindow::octalButtonClicked,
+                              &MainWindow::decimalButtonClicked, &MainWindow::hexadecimalButtonClicked
+
+    };
+
+    //create and connect buttons
+    for(int i = 0; i< ButtonCount;i++)
+    {
+        buttons[i]= new QPushButton(systems[i], this);
+        buttons[i]->setGeometry(QRect(QPoint(50, 150 + 50* i),QSize(200, 50)));
+        connect(buttons[i], &QPushButton::clicked,this,mySlots[i]);
+
+        // Optional button styling:
+        // buttons[i]->setStyleSheet("border: 1px solid black; border-radius: 10px;");
+    }
+
    for(int i = 0; i <= 3; i++)
     {
         buttons[i]->setGeometry(QRect(QPoint(50, 300), QSize(50,50)));
@@ -22,21 +55,14 @@ MainWindow::MainWindow(QWidget *parent)
         buttons[i+2]->setGeometry(QRect(QPoint(150, 300), QSize(50,50)));
         buttons[i+3]->setGeometry(QRect(QPoint(200, 300), QSize(50,50)));
 
-
-
     }
     /*QString style = "background-color: rgba(128, 128, 128, 128); color: white;";
     style += " QPushButton { background-color: #444; color: white; border-radius: 5px; }";
     setStyleSheet(style);*/
-
-    geomtry();
     //connect()
 }
 
-MainWindow::~MainWindow()
-{
 
-}
 void MainWindow::octalButtonClicked()
 {
     hide();
@@ -72,24 +98,23 @@ void MainWindow::hexadecimalButtonClicked()
 {
 
     hide();
-    Hexadecimal *hexadecimalWindow = new Hexadecimal();
+    Hexadecimal *hexadecimalWindow =new Hexadecimal();
     hexadecimalWindow->showMaximized();
     hexadecimalWindow->setFixedSize(300, 400);
     hexadecimalWindow->setWindowTitle("Hexadecimal");
     hexadecimalWindow->show();
 }
 
-void MainWindow::geomtry()
-{
+//void MainWindow::geomtry()
+/*{
 
     //background color of the window
    //setStyleSheet("background-color: rgba(128, 128, 128, 128); color: white;");
-   prompt = new QLabel("Which Base System Do You Want To Use", this);
-   prompt->setGeometry(QRect(QPoint(50, 100), QSize(300,50)));
+
   // prompt->setStyleSheet("background-color: transparent; color: white;");
 
    //adding prompt buttons
-   QString systems[] = {"Binary", "Octal", "Decimal ", "Hexadecimal"};
+
    for(int i = 0; i <= 3; i++)
    {
        buttons[i] = new QPushButton(systems[i], this);
@@ -104,22 +129,17 @@ void MainWindow::geomtry()
        } else if (i == 3) {
            connect(buttons[i], SIGNAL(clicked()), this, SLOT(hexadecimalButtonClicked()));
        }
-       typedef void(MainWindow::*slotFunction)();
-       slotFunction mySlots[] = { &MainWindow::binaryButtonClicked, &MainWindow::octalButtonClicked,
-                               &MainWindow::decimalButtonClicked, &MainWindow::hexadecimalButtonClicked};
-       for(int i = 0; i<=3;i++)
-       {
-           connect(buttons[i], &QPushButton::clicked,this,mySlots[i]);
-       }
+
+
 
        //buttons border color
        /*buttons[i]->setStyleSheet("border: 1px solid black; border-radius: 10px;"
                                  "background-color: lightgray;"
                                  "QPushButton:hover { background-color:gray; }"
                                  "QPushButton:pressed {background-color: darkgray; }");*/
-   }
+   /*}
 
 
-}
+}*/
 
 

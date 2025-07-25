@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void geomtry();
+    void setupUI();
     //void funtionToMain();
 signals:
 
@@ -34,7 +34,7 @@ private slots:
     void hexadecimalButtonClicked();
 private:
     QLabel *prompt{nullptr};
-    static constexpr int ButtonCount = 5;
+    static constexpr int ButtonCount = 4;
     QPushButton *buttons[ButtonCount] = {nullptr};
     Binary *binaryWindow{nullptr};
     Octal *octalWindow{nullptr};
