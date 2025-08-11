@@ -66,7 +66,6 @@ void Hexadecimal::functionToMain()
 {
     MainWindow *window = new MainWindow();
     window->show();
-    window->showMaximized();
     window->setFixedSize(300, 400);
     window->raise();
     window->setFocus();

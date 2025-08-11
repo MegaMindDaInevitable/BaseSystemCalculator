@@ -24,7 +24,7 @@ private slots:
 private:
     QPushButton *backButton;
     QLineEdit *userInput;
-    QPushButton *moreButtons[3];
+    QPushButton *moreButtons[2];
 
 
 };

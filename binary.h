@@ -39,7 +39,7 @@ public slots:
 
 private:
     //Binary binaryWindow();
-    QPushButton *moreButtons[3];
+    QPushButton *moreButtons[2];
     QPushButton *backButton;
     QLabel  *labl;
     QLineEdit *userInput;

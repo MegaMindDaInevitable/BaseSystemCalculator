@@ -67,7 +67,6 @@ void MainWindow::octalButtonClicked()
 {
     hide();
     Octal *octalWindow = new Octal();
-   // octalWindow->showMaximized();
     octalWindow->setFixedSize(300, 400);
     octalWindow->setWindowTitle("Octal");
     octalWindow->show();
@@ -77,7 +76,6 @@ void MainWindow::binaryButtonClicked()
 {
     hide();
     Binary *binaryWindow = new Binary();
-    //binaryWindow->showMaximized();
     binaryWindow->setFixedSize(300, 400);
     binaryWindow->setWindowTitle("Binary");
     binaryWindow->show();
@@ -87,7 +85,6 @@ void MainWindow::decimalButtonClicked()
 {
     hide();
     Decimal *decimalWindow = new Decimal();
-    //decimalWindow->showMaximized();
     decimalWindow->setFixedSize(300, 400);
     decimalWindow->setWindowTitle("Decimal");
     decimalWindow->show();
