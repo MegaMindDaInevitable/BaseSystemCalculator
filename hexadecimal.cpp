@@ -65,7 +65,9 @@ void Hexadecimal::funForButton()
 void Hexadecimal::functionToMain()
 {
     MainWindow *window = new MainWindow();
+    window->setAttribute(Qt::WA_DeleteOnClose);
     window->show();
+   // this->hide();
     window->setFixedSize(300, 400);
     window->raise();
     window->setFocus();

@@ -66,7 +66,8 @@ void MainWindow::setupUI()
 void MainWindow::octalButtonClicked()
 {
     hide();
-    Octal *octalWindow = new Octal();
+    Octal *octalWindow = new Octal(nullptr);
+    octalWindow->setAttribute(Qt::WA_DeleteOnClose);
     octalWindow->setFixedSize(300, 400);
     octalWindow->setWindowTitle("Octal");
     octalWindow->show();
@@ -75,7 +76,8 @@ void MainWindow::octalButtonClicked()
 void MainWindow::binaryButtonClicked()
 {
     hide();
-    Binary *binaryWindow = new Binary();
+    Binary *binaryWindow = new Binary(nullptr);
+    binaryWindow->setAttribute(Qt::WA_DeleteOnClose);
     binaryWindow->setFixedSize(300, 400);
     binaryWindow->setWindowTitle("Binary");
     binaryWindow->show();
@@ -84,7 +86,8 @@ void MainWindow::binaryButtonClicked()
 void MainWindow::decimalButtonClicked()
 {
     hide();
-    Decimal *decimalWindow = new Decimal();
+    Decimal *decimalWindow = new Decimal(nullptr);
+    decimalWindow->setAttribute(Qt::WA_DeleteOnClose);
     decimalWindow->setFixedSize(300, 400);
     decimalWindow->setWindowTitle("Decimal");
     decimalWindow->show();
@@ -95,7 +98,8 @@ void MainWindow::hexadecimalButtonClicked()
 {
 
     hide();
-    Hexadecimal *hexadecimalWindow =new Hexadecimal();
+    Hexadecimal *hexadecimalWindow =new Hexadecimal(nullptr);
+    hexadecimalWindow->setAttribute(Qt::WA_DeleteOnClose);
     //hexadecimalWindow->showMaximized();
     hexadecimalWindow->setFixedSize(300, 400);
     hexadecimalWindow->setWindowTitle("Hexadecimal");

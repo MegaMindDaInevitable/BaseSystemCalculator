@@ -74,11 +74,14 @@ void Decimal::functionBtn()
 void Decimal::functionToMain()
 {
 
-    MainWindow *window = new MainWindow();
+    MainWindow *window = new MainWindow(nullptr);
+    window->setAttribute(Qt::WA_DeleteOnClose);
     window->show();
+    //this->hide();
     window->setFixedSize(300, 400);
     window->raise();
     window->setFocus();
     this->close();
+
 }
 
