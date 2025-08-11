@@ -17,11 +17,15 @@ public:
     explicit Binary(QWidget *parent = nullptr);
     void funcForButton(); //function to creat a button
     void binaryGUI();
-    int binaryCalculations();
+    //int binaryCalculations();
 
 
 private slots:
     void functionToMain();
+    void toDecimal();
+    void toHexadecimal();
+    void toOctal();
+
 
 public slots:
 
@@ -35,7 +39,7 @@ public slots:
 
 private:
     //Binary binaryWindow();
-    QPushButton *moreButtons[2];
+    QPushButton *moreButtons[3];
     QPushButton *backButton;
     QLabel  *labl;
     QLineEdit *userInput;

@@ -13,7 +13,7 @@ Binary::Binary(QWidget *parent)
 {
 
     binaryGUI();
-    geometry();
+    //setupUI();
 }
 
 void Binary::funcForButton()
@@ -53,15 +53,15 @@ void Binary::binaryGUI()
    // userInput->setStyleSheet("border: 1px solid black;border-radius:10px;");
 
     QString binaryNumber = userInput->text();
-    int sizeOfInput;
-    sizeOfInput = binaryNumber.size();
+
+
     QString contain;
-    for(int i = 0; i<= sizeOfInput; i-- )
+    for(int i = 0; i<= binaryNumber.size(); i++ )
     {
-        if(binaryNumber[i] != '1' && binaryNumber != '0')
+        if(binaryNumber[i] != '1' && binaryNumber[i] != '0')
         {
             //"A binary system only contains 1 and  0"
-            contain+=binaryNumber[i];
+            contain +=binaryNumber[i];
 
         }
     }
@@ -124,4 +124,16 @@ void Binary::functionToMain()
     window->setFocus();
     this->close();
 
+}
+// Placeholder functions — implement later if needed
+void Binary::toDecimal() {
+    // TODO: convert binary to decimal or switch to Decimal window
+}
+
+void Binary::toHexadecimal() {
+    // TODO: convert binary to hexadecimal or switch to Hexadecimal window
+}
+
+void Binary::toOctal() {
+    // TODO: convert binary to octal or switch to Octal window
 }
