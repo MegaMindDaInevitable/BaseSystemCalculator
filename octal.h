@@ -1,35 +1,32 @@
-
 #ifndef OCTAL_H
 #define OCTAL_H
-
 
 #include <QObject>
 #include <QWidget>
 #include <QPushButton>
 #include <QLineEdit>
 
+class MainWindow;
 
 class Octal : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Octal(QWidget *parent = nullptr);
+    explicit Octal(MainWindow* mainWindow, QWidget *parent = nullptr);
     void octalGUI();
     void buttonBack();
 
 private slots:
     void functionToMain();
-
-
-signals:
-
+    void toBinary();
+    void toDecimal();
+    void toHexadecimal();
 
 private:
-   // Octal octalWindow();
+    MainWindow* mainWindow;
     QPushButton *backButton;
     QLineEdit *userInput;
     QPushButton * moreButtons[3];
-
 };
 
 #endif // OCTAL_H
