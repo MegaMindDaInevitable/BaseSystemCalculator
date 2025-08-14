@@ -5,11 +5,14 @@
 #include <QLineEdit>
 #include <QWidget>
 #include <QLayout>
+#include <QString>
 
 Binary::Binary(MainWindow* mainWindowPtr, QWidget *parent)
     : QWidget(parent), mainWindow(mainWindowPtr)
 {
     binaryGUI();
+    //connect()
+
 }
 
 void Binary::funcForButton()
@@ -21,26 +24,20 @@ void Binary::funcForButton()
 
 void Binary::binaryGUI()
 {
+    //creating input box
     userInput = new QLineEdit (this);
     userInput->setPlaceholderText("Enter your number here...");
     userInput->setGeometry(QRect(QPoint(50, 5),QSize(200,50)));
 
-    QString binaryNumber = userInput->text();
-    QString contain;
 
-    for(int i = 0; i < binaryNumber.size(); i++)
-    {
-        if(binaryNumber[i] != '1' && binaryNumber[i] != '0')
-        {
-            contain += binaryNumber[i];
-        }
-    }
 
-    QLabel *resultsLbl = new QLabel("Answer",this);
-    resultsLbl->setGeometry(QRect(QPoint(50, 75),QSize(200, 50)));
-    resultsLbl->setText(contain);
+    //printing out the answer
+    resultsLabel = new QLabel("Answer",this);
+    resultsLabel->setGeometry(QRect(QPoint(50, 75),QSize(200, 50)));
+   // resultsLabel->setText(contain);
 
     funcForButton();
+    //creating buttons
     QString otherSystem[] = {"Octal","Decimal","Hexadecimal"};
     for(int i = 0; i <= 2; i++)
     {
@@ -56,13 +53,37 @@ void Binary::binaryGUI()
         }
     }
 }
-
+//function to go back to mainwindow
 void Binary::functionToMain()
 {
     mainWindow->show();
     this->close();
 }
 
-void Binary::toDecimal() {}
+void Binary::toDecimal() {
+    //validating input
+    QString binaryNumber = userInput->text();
+   // QString contain;
+
+    //checking if the input accepts only 1 and 0
+    for(int i = 0; i < binaryNumber.size(); i++)
+    {
+        //if(binaryNumber[i] != '1' && binaryNumber[i] != '0')
+       // {
+            QChar characterInTheInput = binaryNumber.at(i);
+            if(characterInTheInput != '0' && characterInTheInput != '1')
+            {
+                resultsLabel->setText("Invalid binary: " /*+ characterInTheInput*/);
+
+                return;
+            }
+       // }
+    }
+
+    bool ok;
+
+    int decimal = binaryNumber.toInt(&ok, 2);
+    resultsLabel->setText(ok ? QString::number(decimal): "Invalid input");
+}
 void Binary::toHexadecimal() {}
 void Binary::toOctal() {}

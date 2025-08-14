@@ -6,6 +6,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
+#include <QString>
 
 class MainWindow;
 
@@ -29,6 +30,7 @@ private:
     QPushButton *backButton;
     QLineEdit *userInput;
     QString text;
+    QLabel* resultsLabel;
 };
 
 #endif // BINARY_H
