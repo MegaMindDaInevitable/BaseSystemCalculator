@@ -43,6 +43,22 @@ void Binary::binaryGUI()
     {
         moreButtons[i] = new QPushButton(otherSystem[i], this);
         moreButtons[i]->setGeometry((QRect(QPoint(50, 150 + 50 * i), QSize(200, 50))));
+        moreButtons->setStyleSheet("QPushButton {"
+                                   "   background-color: #333333;"  // Dark gray
+                                   "   color: white;"
+                                   "   border-radius: 15px;"        // Rounded corners
+                                   "   padding: 8px;"
+                                   "   border: 1px solid #555555;"  // Subtle border
+                                   "   font-weight: bold;"
+                                   "}"
+                                   "QPushButton:hover {"
+                                   "   background-color: #444444;"  // Lighter on hover
+                                   "   border: 1px solid #777777;"
+                                   "}"
+                                   "QPushButton:pressed {"
+                                   "   background-color: #222222;"  // Darker when pressed
+                                   "}"
+                                   );
 
         if(i == 0){
             connect(moreButtons[i], SIGNAL(clicked()), this, SLOT(toOctal()));
