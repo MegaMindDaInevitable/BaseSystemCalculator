@@ -43,7 +43,7 @@ void Binary::binaryGUI()
     {
         moreButtons[i] = new QPushButton(otherSystem[i], this);
         moreButtons[i]->setGeometry((QRect(QPoint(50, 150 + 50 * i), QSize(200, 50))));
-        moreButtons->setStyleSheet("QPushButton {"
+        moreButtons[i]->setStyleSheet("QPushButton {"
                                    "   background-color: #333333;"  // Dark gray
                                    "   color: white;"
                                    "   border-radius: 15px;"        // Rounded corners
