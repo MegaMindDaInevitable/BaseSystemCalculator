@@ -63,7 +63,7 @@ void Decimal::decimalGui()
 void Decimal::functionBtn()
 {
     backButton = new QPushButton("Back",this);
-    backButton->setGeometry(QRect(QPoint(1,1),QSize(40,25)));
+    backButton->setGeometry(QRect(QPoint(1,1),QSize(40,30)));
     backButton->setStyleSheet("QPushButton {"
                                "   background-color: #333333;"  // Dark gray
                                "   color: white;"
