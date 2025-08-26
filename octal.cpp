@@ -34,7 +34,7 @@ void Octal::octalGUI()
         moreButtons[i]->setStyleSheet("QPushButton {"
                                       "   background-color: #333333;"  // Dark gray
                                       "   color: white;"
-                                      "   border-radius: 15px;"        // Rounded corners
+                                      "   border-radius: 11px;"        // Rounded corners
                                       "   padding: 8px;"
                                       "   border: 1px solid #555555;"  // Subtle border
                                       "   font-weight: bold;"
