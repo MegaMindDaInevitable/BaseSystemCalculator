@@ -61,7 +61,7 @@ void Octal::octalGUI()
 void Octal::buttonBack()
 {
     backButton = new QPushButton("Back",this);
-    backButton->setGeometry(QRect(QPoint(1,1),QSize(40,30)));
+    backButton->setGeometry(QRect(QPoint(1,1),QSize(45,30)));
     backButton->setStyleSheet("QPushButton {"
                                "   background-color: #333333;"  // Dark gray
                                "   color: white;"
