@@ -15,6 +15,13 @@ void Octal::octalGUI()
     userInput = new QLineEdit (this);
     userInput->setPlaceholderText("Enter your number here...");
     userInput->setGeometry(QRect(QPoint(50, 5),QSize(200,50)));
+    userInput->setStyleSheet("QLineEdit {"
+                             "   border-radius: 11px;"        // Rounded corners
+                             "   padding: 8px;"
+                             "   border: 1px solid #555555;"  // Subtle border
+                             "   font-weight: bold;"
+                             "}"
+                            );
 
     QLabel *outPutLabel = new QLabel("Answer", this);
     outPutLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
