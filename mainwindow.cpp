@@ -10,6 +10,11 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    // Set the window to be frameless
+    setWindowFlags(Qt::FramelessWindowHint);
+
+    // Enable transparency for rounded corners
+    setAttribute(Qt::WA_TranslucentBackground);
     setupUI();
 }
 
@@ -19,6 +24,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::setupUI()
 {
+    QWidget *centralWidget =  new QWidget(this);
+    centralWidget->setObjectName("centralWidget");
+    cenytralWidget->setStyleSheet(
+        "#centralWidget{"
+        "   background-color: black;"
+        "   border-radius: 20px;"
+        "}"
+        );
     prompt = new QLabel("Which Base System Do You Want To Use", this);
     prompt->setGeometry(QRect(QPoint(50, 100), QSize(300,50)));
 
