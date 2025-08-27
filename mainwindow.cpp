@@ -26,14 +26,26 @@ void MainWindow::setupUI()
 {
     QWidget *centralWidget =  new QWidget(this);
     centralWidget->setObjectName("centralWidget");
-    cenytralWidget->setStyleSheet(
+    /*centralWidget->setStyleSheet(
         "#centralWidget{"
-        "   background-color: black;"
-        "   border-radius: 20px;"
+        "   background-color: grey;"
+        "   border-radius: 11px;"
         "}"
-        );
-    prompt = new QLabel("Which Base System Do You Want To Use", this);
-    prompt->setGeometry(QRect(QPoint(50, 100), QSize(300,50)));
+        );*/
+
+   /* setCentralWidget(centralWidget);
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
+
+    mainLayout->setContentsMargins(20, 30, 20, 20);
+    mainLayout->setSpacing(15);*/
+
+
+    prompt = new QLabel("Which Base System Do You Want To Use", centralWidget);
+    prompt->setStyleSheet("color: white; background-color: transparent;");
+   // prompt->setAlignment(Qt::AlignCenter);
+   // mainLayout->addWidget(prompt);
+   prompt->setGeometry(QRect(QPoint(50, 100), QSize(300,50)));
 
     QString systems[] = {"Binary", "Octal", "Decimal", "Hexadecimal"};
     typedef void(MainWindow::*slotFunction)();
