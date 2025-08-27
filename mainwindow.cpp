@@ -26,12 +26,12 @@ void MainWindow::setupUI()
 {
     QWidget *centralWidget =  new QWidget(this);
     centralWidget->setObjectName("centralWidget");
-    /*centralWidget->setStyleSheet(
+    centralWidget->setStyleSheet(
         "#centralWidget{"
         "   background-color: grey;"
         "   border-radius: 11px;"
         "}"
-        );*/
+        );
 
    /* setCentralWidget(centralWidget);
 
