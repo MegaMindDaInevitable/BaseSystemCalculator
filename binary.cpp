@@ -34,7 +34,7 @@ void Binary::funcForButton()
                                "QPushButton:pressed {"
                                "   background-color: #222222;"  // Darker when pressed
                                "}");
-    connect(backButton, SIGNAL(clicked(bool)),this, SLOT(functionToMain()));
+    connect(backButton, SIGNAL(clicked()),this, SLOT(functionToMain()));
 }
 
 void Binary::binaryGUI()
