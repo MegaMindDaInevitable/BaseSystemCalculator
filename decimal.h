@@ -4,7 +4,9 @@
 #include <QObject>
 #include <QWidget>
 #include <QPushButton>
-#include <QLineEdit>
+#include <QLineEdit> //
+
+#include <QLabel>
 
 class MainWindow;
 
@@ -27,6 +29,7 @@ private:
     QPushButton *backButton;
     QLineEdit *userInput;
     QPushButton *moreButtons[3];
+    QLabel *resultLabel;
 };
 
 #endif // DECIMAL_H
