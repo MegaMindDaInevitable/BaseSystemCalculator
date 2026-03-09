@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QLineEdit>
+#include <QLabel>
 
 class MainWindow;
 
