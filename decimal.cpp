@@ -24,8 +24,8 @@ void Decimal::decimalGui()
                              "}"
                              );
 
-    QLabel *outPutLabel = new QLabel("Answer", this);
-    outPutLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
+    resultLabel = new QLabel("Answer", this);
+    resultLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
 
     functionBtn();
 
