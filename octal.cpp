@@ -23,8 +23,8 @@ void Octal::octalGUI()
                              "}"
                             );
 
-    QLabel *outPutLabel = new QLabel("Answer", this);
-    outPutLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
+    resulttLabel = new QLabel("Answer", this);
+    resultLabel->setGeometry(QRect(QPoint(50,75), QSize(200, 50)));
 
     QString otherSystem[] = {"Binary","Decimal","Hexadecimal"};
     for(int i = 0; i <= 2; i++)

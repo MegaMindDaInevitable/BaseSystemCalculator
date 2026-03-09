@@ -28,6 +28,7 @@ private:
     QPushButton *backButton;
     QLineEdit *userInput;
     QPushButton * moreButtons[3];
+    QLabel *resultLabel;
 };
 
 #endif // OCTAL_H
